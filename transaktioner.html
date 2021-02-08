@@ -1,0 +1,90 @@
+<article class="two mb-8">
+    <h1 class="text-xl">Transaktioner</h1>
+
+    <p class="mb-4">Under kvartalet hanterade Billecta-plattformen omkring 360 000 transaktioner, en ökning med cirka 10 % sedan föregående kvartal. Ökningen kommer i huvudsak genom ett ökat antal små och medelstora kunder. </p>
+
+    <h2 class="font-bold">Teknik/nya funktioner</h2>
+    <p class="mb-4">Vad gäller vår tekniska plattform har fokus legat på prestandaförbättringar med anledning av ett växande antal kunder med stora volymer, implementation av större kunder som skall driftsättas under 2021, samt lansering av produkten Säljfinans.</p>
+
+    <p class="mb-4">Vi har dessutom välkomnat två nya medarbetare inom tech-teamet, och är därmed väl förberedda inför ett 2021 med betydande ökning av transaktionsvolymen.</p>
+
+
+    <h2 class="font-bold">Kunder och marknadsaktiviteter</h2>
+    <p class="mb-4">Tillväxten under kvartalet har kommit både från ökade volymer hos existerande kunder och genom nya kunder. Ett exempel på ny kund är Advisa, som tillkommit genom vårt partnerskap med Maiden Insurance - ett partnerskap som vi tror kommer öka i omfattning framgent. Ett annat partnerskap som bidragit med goda volymer är plattformen Allabrf.se; vår tjänst är inkluderad till deras erbjudande till bostadsrättsföreningar. Under Q4 har cirka 50 föreningar börjat använda vår tjänst genom Allabrf.se. Under kvartalet har vi också lanserat den nya kreditprodukten SäljFinans. Vi kommer inom kort presentera vår första kund på denna produkt som kommer nyttja både vår fakturaservice samt kreditprodukten. Volymerna från detta samarbete förväntas börja komma under Q1.</p>
+
+
+    <p>Vi är i slutfasen av onboardingen av ett par större kunder som har ställt höga krav på organisationen när det kommer till tillägg av ny funktionalitet. Vid varje önskemål från kunder som kräver anpassning av vårt system strävar vi efter att funktionaliteten ska kunna nyttjas av samtliga kunder.</p>
+
+    <div class="image mb-8 relative" style="background-image: url('img/img_3.jpg'); height: 5.9972cm; width: calc(100% + 0.5cm); margin-bottom: 16pt;"></div>
+    <!--<div class="ghost" style="height: 4.5cm; width: 100%; margin-bottom: 8pt;"></div>-->
+
+    <p class="mb-4">På detta vis håller vi ihop systemet och kan driva det effektivt framåt utan speciallösningar för varje kund.</p>
+
+    <p class="mb-4">Under kvartalet har vi också startat flera olika marknadsprojekt. Bland annat initierade vi arbetet med en ny SEO-plattform. Vi gjorde även ett antal kampanjer riktade mot ett antal utvalda målgrupper, såsom till exempel givarorganisationer där vi har haft mycket god framgång med vårt erbjudande. Vi kommer även fortsättningsvis arbeta mycket utifrån strategin att bearbeta en målgrupp där vi utvecklat god erfarenhet från en tidigare kund inom samma målgrupp.</p>
+
+    <p>Produkten Inkasso har även den utvecklats väl under kvartalet. Förutom att erbjuda ombudsinkasso (dvs inkasso på uppdrag av fordringsägaren) hanteras nu även inkasso på förvärvade fordringar. Med detta har volymerna som vi hanterar inom produkten inkasso ökat. Vi ser möjlighet att kunna öka effektiviteten i vår inkassohantering genom att uppdatera vissa funktioner i vårt ärendehanteringssystem, detta arbete inleddes under kvartalet och kommer fortgå under 2021.</p>
+</article>
+
+<div style="flex:1 1 100%">
+    <canvas id="transaktionerChart"></canvas>
+</div>
+
+<div class="page-footer">
+    <p>SAVELEND – BOKSLUTSKOMMUNIKÉ 2020</p>
+    <div class="divider"></div>
+    <p class="counter"></p>
+</div>
+
+<script>
+    var ctx = document.getElementById('transaktionerChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                'Q1 2019',
+                'Q2 2019',
+                'Q3 2019',
+                'Q4 2019',
+                'Q1 2020',
+                'Q2 2020',
+                'Q3 2020',
+                'Q4 2020'
+            ],
+            datasets: [{
+                data: [
+                    189370,
+                    237809,
+                    223080,
+                    244401,
+                    276010,
+                    279758,
+                    320075,
+                    360457
+                ],
+                backgroundColor: colors,
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Antalet transaktioner i plattformen (tusental)',
+            },
+            legend: {
+                display: false
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        callback: function (value, index, values) {
+                            var val = value / 1000;
+                            return val;
+                        }
+                    }
+                }]
+            }
+        }
+    });
+</script>

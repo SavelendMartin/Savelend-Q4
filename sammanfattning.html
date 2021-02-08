@@ -1,0 +1,118 @@
+<h1 class="text-xl">Bokslutskommuniké 2020</h1>
+<article class="two">
+    <h2 class="font-bold mb-2">Fjärde kvartalet 1 oktober – 31 december 2020</h2>
+    <ul class="list-outside list-disc mb-4 ml-4">
+        <li>Intäkterna för perioden uppgick till 17,3 MSEK (11,7 MSEK), en ökning med 48%</li>
+        <li>Rörelseresultat före avskrivningar uppgick till -3,0 MSEK (-2,2 MSEK)</li>
+        <li>Rörelseresultatet uppgick till -4,8 MSEK ( -3,8 MSEK)</li>
+        <li>Nettoresultatet uppgick till -5,0 MSEK ( -4,8 MSEK)</li>
+        <li>Resultat per aktie före utspädning uppgick till -0,67 SEK ( -0,78 SEK)</li>
+    </ul>
+
+
+    <h2 class="font-bold mb-2">Perioden 1 januari – 31 december 2020</h2>
+    <ul class="list-outside list-disc ml-4 mb-4">
+        <li>Intäkterna för perioden januari-december uppgick till 56,4 MSEK (44,8 MSEK), en ökning med 26%</li>
+        <li>Rörelseresultat före avskrivningar uppgick till -7,1 MSEK (0,6 MSEK)</li>
+        <li>Rörelseresultatet uppgick till -14,0 MSEK ( -5,5 MSEK)</li>
+        <li>Nettoresultatet uppgick till -14,6 MSEK ( -6,0 MSEK)</li>
+        <li>Resultat per aktie före utspädning uppgick till -0,2 SEK ( -0,5 SEK)</li>
+    </ul>
+</article>
+<article class="two mb-10">
+    <h2 class="font-bold mb-2">Händelser under perioden</h2>
+    <ul class="list-outside list-disc mb-4 ml-4">
+        <li>Andrahandsmarknad för krediter lanserades</li>
+        <li>Migration av samtliga krediter till nytt depåsystem</li>
+        <li>COO Jonas Ahlberg tillträde som CFO i december</li>
+    </ul>
+
+    <h2 class="font-bold mb-2">Händelser efter perioden</h2>
+    <ul class="list-outside list-disc mb-4 ml-4">
+        <li>Linda Drake Ström tillträdde som kreditchef (CCO) i januari 2021</li>
+        <li>Miika Engström rekryterad som Chief Revenue Officer (CRO)</li>
+        <li>Ny originator på plattformen – Svensk Kreditförmedling</li>
+    </ul>
+</article>
+
+<div class="grid gap-4 grid-cols-2 mb-8">
+    <div class="bg-gradient-to-b from-savelend-500 to-savelend-600 text-center p-8">
+        <p class="text-savelend-50 text-xl mb-4 has-border font-bold">AUM</p>
+        <p class="text-white text-4xl font-bold mb-2">261 MSEK</p>
+        <p class="text-savelend-100 text-lg">(215 MSEK)</p>
+    </div>
+
+    <div class="bg-gradient-to-b from-savelend-500 to-savelend-600 text-center p-8">
+        <p class="text-savelend-50 text-xl mb-4 has-border font-bold">TRANSAKTIONER</p>
+        <p class="text-white text-4xl font-bold mb-2">360 457 st</p>
+        <p class="text-savelend-100 text-lg">(244 401 st)</p>
+    </div>
+</div>
+
+
+
+<div class="mb-10" style="flex:1 1 100%">
+    <canvas id="sammanfattningChart"></canvas>
+</div>
+
+<p class="italic">Siffror inom parentes avser samma period föregående år.</p>
+
+<div class="page-footer">
+    <p>SAVELEND – BOKSLUTSKOMMUNIKÉ 2020</p>
+    <div class="divider"></div>
+    <p class="counter"></p>
+</div>
+
+<script>
+    var ctx = document.getElementById('sammanfattningChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                'Q1 2019',
+                'Q2 2019',
+                'Q3 2019',
+                'Q4 2019',
+                'Q1 2020',
+                'Q2 2020',
+                'Q3 2020',
+                'Q4 2020'
+            ],
+            datasets: [{
+                data: [
+                    10832,
+                    10549,
+                    11691,
+                    11696,
+                    12160,
+                    12057,
+                    14655,
+                    17291,
+                ],
+                backgroundColor: colors,
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Totala intäkter per kvartal TSEK',
+            },
+            legend: {
+                display: false
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: false,
+                        callback: function (value, index, values) {
+                            var val = value;
+                            return val;
+                        }
+                    }
+                }]
+            }
+        }
+    });
+</script>
